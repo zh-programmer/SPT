@@ -113,13 +113,13 @@ end`};e.events.push(["putFont",function(s){(function(o){var a=o.font,c=o.out,u=o
 `),`----------------
 `,`TOTAL: $${this.total.toFixed(2)}
 
-`,"\x1Bi"].join("")}truncate(e,t){return e.length>t?e.substring(0,t-1)+"\u2026":e.padEnd(t)}formatLine(e,t,r,i,s,o){let a=`${e} ${t} ${r} ${i} ${s}`;return a.length>o?a.substring(0,o):a}rightAlign(e,t){return e.padStart(t)}deviceId="";serviceUUID="000018f0-0000-1000-8000-00805f9b34fb";characteristicUUID="00002af1-0000-1000-8000-00805f9b34fb";createCommandBuffer(e){return new DataView(new Uint8Array(e).buffer)}initializeBluetooth(){return G(this,null,function*(){yield Lf.initialize({androidNeverForLocation:!0})})}scanAndConnect(){return G(this,null,function*(){let e=yield Lf.requestDevice({services:[this.serviceUUID],optionalServices:[this.serviceUUID]});return this.deviceId=e.deviceId,yield Lf.connect(this.deviceId),this.deviceId})}printReceipt(e){return G(this,null,function*(){let t=e.reduce((s,o)=>s+o.price*o.quantity,0),r=49,i=[this.createCommandBuffer([27,64]),Fs(`
+`,"\x1Bi"].join("")}truncate(e,t){return e.length>t?e.substring(0,t-1)+"\u2026":e.padEnd(t)}formatLine(e,t,r,i,s,o){let a=`${e} ${t} ${r} ${i} ${s}`;return a.length>o?a.substring(0,o):a}rightAlign(e,t){return e.padStart(t)}deviceId="";serviceUUID="000018f0-0000-1000-8000-00805f9b34fb";characteristicUUID="00002af1-0000-1000-8000-00805f9b34fb";createCommandBuffer(e){return new DataView(new Uint8Array(e).buffer)}initializeBluetooth(){return G(this,null,function*(){yield Lf.initialize({androidNeverForLocation:!0})})}scanAndConnect(){return G(this,null,function*(){let e=yield Lf.requestDevice({services:[this.serviceUUID],optionalServices:[this.serviceUUID]});return this.deviceId=e.deviceId,yield Lf.connect(this.deviceId),this.deviceId})}printReceipt(e){return G(this,null,function*(){let t=e.reduce((s,o)=>s+o.price*o.quantity,0),r=45,i=[this.createCommandBuffer([27,64]),Fs(`
 `),this.createCommandBuffer([27,97,1]),Fs(`MY STORE
 `),Fs(`_________
 
 `),this.createCommandBuffer([27,97,0]),Fs(this.formatLine("Product      ","Cat      ","Qty     ","Price     ","Total     ",r)+`
 `),Fs(`------------------------------
-`)];e.forEach(s=>{let o=this.formatLine(this.truncate(s.productName,14),this.truncate(s.categoryName,13),s.quantity.toString().padStart(4),`$${s.price.toFixed(2)}`.padStart(9),`$${(s.price*s.quantity).toFixed(9)}`,r);i.push(Fs(o+`
+`)];e.forEach(s=>{let o=this.formatLine(this.truncate(s.productName,14),this.truncate(s.categoryName,10),s.quantity.toString().padStart(3),`$${s.price.toFixed(2)}`.padStart(8),`$${(s.price*s.quantity).toFixed(10)}`,r);i.push(Fs(o+`
 `))}),i.push(Fs(`
 `),Fs(this.rightAlign(`Subtotal: $${t.toFixed(2)}`,r)+`
 `),Fs(this.rightAlign("Discount (0%): $0.00",r)+`
