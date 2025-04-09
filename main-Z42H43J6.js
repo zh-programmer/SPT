@@ -117,9 +117,9 @@ end`};e.events.push(["putFont",function(s){(function(o){var a=o.font,c=o.out,u=o
 `),this.createCommandBuffer([27,97,1]),Fs(`MY STORE
 `),Fs(`_________
 
-`),this.createCommandBuffer([27,97,0]),Fs(this.formatLine("Product      ","Cat      ","Qty     ","Price     ","Total     ",r)+`
+`),this.createCommandBuffer([27,97,0]),Fs(this.formatLine("Product      ","      ","Qty     ","Price     ","Total     ",r)+`
 `),Fs(`------------------------------
-`)];e.forEach(s=>{let o=this.formatLine(this.truncate(s.productName,13),this.truncate(s.categoryName,9),s.quantity.toString().padStart(3),`$${s.price.toFixed(2)}`.padStart(9),`$${(s.price*s.quantity).toFixed(11)}`,r);i.push(Fs(o+`
+`)];e.forEach(s=>{let o=this.formatLine(this.truncate(s.productName,12),this.truncate(s.categoryName,9),s.quantity.toString().padStart(3),`$${s.price.toFixed(2)}`.padStart(11),`$${(s.price*s.quantity).toFixed(11)}`,r);i.push(Fs(o+`
 `))}),i.push(Fs(`
 `),Fs(this.rightAlign(`Subtotal: $${t.toFixed(2)}`,r)+`
 `),Fs(this.rightAlign("Discount (0%): $0.00",r)+`
