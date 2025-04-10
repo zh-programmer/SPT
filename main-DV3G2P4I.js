@@ -108,7 +108,7 @@ end`};e.events.push(["putFont",function(s){(function(o){var a=o.font,c=o.out,u=o
 `),this.createCommandBuffer([27,97,1]),this.createCommandBuffer([27,33,48]),_i(`M&R MOBILES
 `),_i(`_________
 
-`),this.createCommandBuffer([27,97,0]),_i(`------------------------------------------------
+`),this.createCommandBuffer([27,33,0]),this.createCommandBuffer([27,97,0]),_i(`------------------------------------------------
 `),_i(this.formatHeader("Product      ","          ","Qty    ","Price   ","Total    ",r)+`
 `),_i(`------------------------------------------------
 `)];e.forEach(s=>{let o=this.formatLine(s.productName,s.categoryName,s.quantity,s.price,s.price*s.quantity,r);i.push(_i(o+`
