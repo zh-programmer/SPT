@@ -114,10 +114,12 @@ end`};e.events.push(["putFont",function(s){(function(o){var a=o.font,c=o.out,u=o
 `),Yn(`0775815415 / 0753820515 / 0712815415
 
 `),Yn(`Date: ${new Date().toLocaleDateString()}     `),Yn(`Time: ${new Date().toLocaleTimeString()}
-`)];(this.customerName||this.customerPhone)&&(this.customerName&&Yn(`Customer Name: ${this.customerName}     `),this.customerPhone&&Yn(`Phone: ${this.customerPhone}`)),this.createCommandBuffer([27,97,0]),Yn(`------------------------------------------------
+`),Yn(`Customer Name: ${this.customerName} || Unknown     
+`),Yn(`Phone: ${this.customerPhone}
+`),this.createCommandBuffer([27,97,0]),Yn(`------------------------------------------------
 `),Yn(this.formatHeader("Product      ","          ","Qty    ","Price   ","Total    ",r)+`
 `),Yn(`------------------------------------------------
-`),e.forEach(s=>{let o=this.formatLine(s.productName,s.categoryName,s.quantity,s.price,s.price*s.quantity,r);i.push(Yn(o+`
+`)];e.forEach(s=>{let o=this.formatLine(s.productName,s.categoryName,s.quantity,s.price,s.price*s.quantity,r);i.push(Yn(o+`
 `))}),i.push(Yn(`
 `),Yn(this.rightAlign(`Subtotal: Rs. ${t.toFixed(2)}`,r)+`
 `),Yn(this.rightAlign(`Discount (${this.discountPercentage}%): Rs. ${this.discountAmount.toFixed(2)}`,r)+`
